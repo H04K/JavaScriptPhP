@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        h1,h3,h2,select,label {
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 200%;
+            color: grey;
+        }
+
+        h1 {
+            font-size: 200%;
+            text-align: center;
+        }
+
+        h3 {
+            text-decoration: underline;
+            font-size: 130%;
+
+        }
+        
+        h2 {
+            font-size: 115%;
+        }
+
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+        select
+        {
+            font-size: 80%;
+        }
+        label {
+            background-color: lightgoldenrodyellow;
+            font-size: 100%;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questionnaire</title>
+
+
+    <script>
+        function reponse(form) {
+            var point = 0;
+            if (form.choix[1].checked) {
+                point += 1;
+            }
+            if (form.check1.checked && form.check2.checked == false) {
+                point += 1;
+            }
+            if (form.liste.selectedIndex == 1) {
+                point += 1;
+            }
+            if (point == 3) {
+                alert(point + " points." + " Bonne réponse !");
+            } else {
+                alert(point + " points. " + " Réessayez encore !")
+            }
+        }
+    </script>
+
+
+</head>
+
+<body>
+
+    <h1>Questionnaire de Connaissances</h1><br>
+    <h3>Un angle droit fais :</h3>
+
+
+    <form name="formulaire">
+        <h2>Un angle droit fait :<h2><br>
+                <input type="radio" name="choix">45°<br>
+                <input type="radio" name="choix">90°<br>
+                <h2>Un triangle isocèle a :</h2> <br>
+                <h2><input type="checkbox" name="check1" value="1">2 côtés égaux<br>
+                <input type="checkbox" name="check2" value="2">3 côtés égaux</h2><br>
+                <h2>Un triangle équilatéral a :</h2><br>
+                <select name="liste">
+                    <option value="1">2 côtés égaux
+                    <option value="2">3 côtés égaux
+                </select>
+                <br><br>
+                
+                <input type="button" name="but" value="Vérifier" onclick="reponse(document.formulaire)">
+                <input type="button" value="Réinitialiser" onclick="this.form.reset()">
+                
+    </form>
+</body>
+
+</html>

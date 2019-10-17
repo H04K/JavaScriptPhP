@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>getElementById()+innerHTML (eventlistener)</title>
+
+  <style>
+    .help-buttons button {
+    font-family: 'Ubuntu', 'Open Sans', sans-serif; ;
+    }
+
+    .help-buttons button:hover {
+    
+      font-family: 'Ubuntu', 'Open Sans', sans-serif; ;
+    }
+
+    #message {
+      font-family: 'Ubuntu', 'Open Sans', sans-serif; ;
+    }
+    body
+    {
+        text-align: center;
+        background-color: blanchedalmond;
+    }
+  </style>
+
+  <script>
+    window.addEventListener("load", function () {
+      var defaultMessage = "Acceuil",
+        buttons = document.querySelectorAll(".help-buttons button"),
+        messageBox = document.getElementById("message");
+
+      document.getElementById("message").innerHTML = defaultMessage;
+
+      for (let b of buttons) {
+        b.addEventListener("mouseover", function (event) {
+          messageBox.innerText = event.target.getAttribute("data-info");
+        });
+
+        b.addEventListener("mouseout", function () {
+          // innerText est mieux ici car on n'inclut pas de code HTML
+          messageBox.innerHTML = defaultMessage;
+        });
+      }
+    });
+  </script>
+</head>
+
+<body>
+  <div class="help-buttons">
+    <button data-info="Contact">Contact</button><br /><br />
+    <button data-info="Foire Aux Questions">F.A.Q.</button><br /><br />
+    <button data-info="Site Pro">Mon site pro</button><br /><br />
+  </div>
+
+  <p id="message"></p>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>onfocus</title>
+    <script>
+    function affiche()
+    {
+        console.log("OK");
+        document.formulaire.nom.value ="Veuillez entrer votre nom";
+    }
+    
+    </script>
+</head>
+
+<body>
+    <label for="nom.id">
+    <form name="formulaire"> <input type="text" name="nom"> <br>
+        <input type="button" value ="ok" onclick="affiche()"> 
+    </form>
+</label>
+</body>
+
+</html>

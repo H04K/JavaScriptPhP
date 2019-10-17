@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>onsubmit</title>
+
+    <script type="text/javascript" language="javascript1.2">
+        function verif(formulaire) {
+            console.log(formulaire);
+
+            var inputs = formulaire.getElementsByTagName("input");
+
+            for (let i of inputs) {
+                console.log(i);
+
+                if (i.value === "" || i.type === "number" && isNaN(i.value)) {
+                    alert("Données non valides");
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+    <style>
+        h1,
+        h3,
+        h2,
+        select,
+        label {
+
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 200%;
+            color: grey;
+        }
+
+        h1 {
+            font-size: 200%;
+            text-align: center;
+        }
+
+        h3 {
+            text-decoration: underline;
+            font-size: 130%;
+
+        }
+
+        h2 {
+            font-size: 115%;
+        }
+
+        body {
+            background-color: lightgoldenrodyellow;
+        }
+
+        select {
+            font-size: 80%;
+        }
+
+        label {
+            background-color: lightgoldenrodyellow;
+            font-size: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form name="formulaire" onsubmit="return verif(this);" onreset="return confirm('Effacer les données ?')>
+    <label for=" a1">Nom
+        <input id="a1" name="nom" type="text" placeholder="Votre nom" size="26" /><br />
+        </label>
+
+        <label for="a2">Prénom
+            <input id="a2" name="prenom" type="text" placeholder="Votre prénom" size="26" /><br />
+        </label>
+
+        <label for="a3">Âge
+            <input id="a3" name="age" type="number" min="0" max="200" placeholder="Votre âge" /><br />
+            <!--Type number comme ça le formulaire n'est pas valide si Age n'est pas un nombre-->
+        </label>
+
+        <button type="submit">Envoyer</button>
+        <button type="reset">Reset</button>
+    </form>
+</body>
+
+</html>

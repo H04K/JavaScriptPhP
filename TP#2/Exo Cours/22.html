@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>onsubmit</title>
+    <style>
+      body
+    {
+        text-align: center;
+        background-color: blanchedalmond;
+    }
+
+    form
+    {
+        font-family:   'Ubuntu', 'Open Sans', sans-serif; 
+    }
+
+               
+    </style>
+    <script type="text/javascript" language="javascript1.2">
+        function verif() {
+            a = document.formulaire.texte1.value;
+            b = document.formulaire.texte2.value;
+            c = document.formulaire.texte3.value;
+            if (a == "" || b == "" || c == "") {
+                alert("Au moins un champ est vide !");
+                return false;
+            }
+            return true;
+        }
+    
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+</head>
+
+<body>
+    <form name="formulaire" onsubmit="return verif();"> <input name="texte1" size="26"><br> <input name="texte2"
+            size="26"><br> <input name="texte3" size="26"><br> <input type="submit"> </form>
+</body>
+
+</html>

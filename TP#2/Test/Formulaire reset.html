@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>onsubmit</title>
+    <script>
+        function verif() {
+            a = document.formulaire.texte1.value;
+            b = document.formulaire.texte2.value;
+            c = document.formulaire.texte3.value;
+
+            if (a == "" || b == "" || c == "") {
+                alert("Au moins un champ est vide !");
+                console.log("Tentative d'envoie sans données")
+                return false;
+            }
+            return true;
+            console.log("Envoie réussi");
+
+        }
+
+        function question() {
+            if (confirm("Voulez-vous supprimer les données ?")) {
+                document.formulaire.texte1.value = "";
+                document.formulaire.texte2.value = "";
+                document.formulaire.texte3.value = "";
+
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <form name="formulaire" onsubmit="return verif()" ;>
+        <label for="nom.id">
+            <input name="texte1" size="26" placeholder="Nom"><br><br>
+        </label>
+        <input name="texte2" size="26" placeholder="Prénom" ><br><br>
+        <input name="texte3" size="26" placeholder="Adresse"><br><br>
+        <input type="submit" value="Envoyer"><br><br>
+
+        <input type="button" value="Reset" onclick="question()"><br>
+
+    </form>
+
+
+</body>
+
+</html>
