@@ -6,7 +6,7 @@ header("Content-Type: application/xml; charset=utf-8");
 
 if (empty($_POST["auteur"]))
 {
-    die("Merci de spécifier le paramètre POST auteur avec un valeur correspondant à un entier");
+    die("Merci de spécifier le paramètre POST auteur");
 }
 
 $auteurChoisi = intval($_POST["auteur"]);

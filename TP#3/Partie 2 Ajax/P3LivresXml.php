@@ -6,7 +6,7 @@ header("Content-Type: application/xml; charset=utf-8");
 
 if (empty($_GET["auteur"]))
 {
-    die("Merci de spécifier le paramètre GET auteur avec un valeur correspondant à un entier");
+    die("Merci de spécifier le paramètre GET ");
 }
 
 $auteurChoisi = intval($_GET["auteur"]);
