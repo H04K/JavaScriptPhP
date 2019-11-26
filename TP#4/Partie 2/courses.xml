@@ -1,0 +1,16 @@
+<products>
+  <product id="1">
+    <name>Steak</name>
+    <price>6</price>
+  </product>
+
+  <product id="2">
+    <name>Casque</name>
+    <price>40</price>
+  </product>
+
+  <product id="3">
+    <name>Salade</name>
+    <price>3</price>
+  </product>
+</products>

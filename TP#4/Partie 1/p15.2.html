@@ -1,0 +1,24 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
+
+<body>
+<form name="ok">
+    <input type="text" id="login">
+    <input type="submit" value="ok" >
+</form>
+    <script>
+        
+            $(document).ready(function () {//Execute une fontion quand le document est chargé
+            $('#ok').submit(function () {
+                if ($('#login').val() == '') {
+                    alert('Entrer un login');
+                    return false;
+                }
+            })
+        });
+       
+ 
+    </script>
+</body>
+
+</html>

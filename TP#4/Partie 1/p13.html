@@ -1,0 +1,18 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
+
+<body>
+      
+    <div> <span class="foo"> Some text </span> </div>
+    <div style="display:none"> <span> More text </span> <span class="foo"> </span> </div>
+    <input type="button" value="Ok"  onclick="changed()">
+
+    <script>
+        function changed() {
+            $("div:hidden").find(".foo").empty().text("Changed").end().show();
+
+        }
+    </script>
+</body>
+
+</html>

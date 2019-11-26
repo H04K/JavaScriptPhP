@@ -1,0 +1,38 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
+
+<body>
+    <div id="monDiv">Bonjour</div>
+    <a href="#" onClick="alterner()">disparition / apparition</a>
+    <ul>
+        <input type="button"  onclick="change()">
+        <li> First item </li>
+        <li style="background:red;"> <span>Changed</span> Second item </li>
+        <li> Third item </li>
+    </ul>
+    <ul>
+        <li> First item </li>
+        <li> Second item </li>
+        <li> Third item </li>
+    </ul>
+
+    <script>
+        var etat = true;
+        function change(){
+            $("li:odd").prepend('<span>Changed</span>').css({background:"red"});
+        }
+       
+
+        function alterner() {
+            if (etat) {
+                $('#monDiv').hide();
+            } else {
+                $('#monDiv').show();
+            }
+
+            etat = !etat; // Remplace etat par la valeur opposée 
+        }
+    </script>
+</body>
+
+</html>

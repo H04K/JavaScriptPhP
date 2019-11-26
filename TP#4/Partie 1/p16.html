@@ -1,0 +1,18 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
+
+<body>
+
+    <input name="nom" type="text" id="nom" value="Entrez votre nom">
+
+    <script>
+     
+    $('#nom').focus(function(){
+        var field =$(this);
+        field.val('');
+    })
+    
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <script type="text/javascript"
+src="http://code.jquery.com/jquery-latest.min.js">
+</script>
+  <script>
+    $.ajax(
+    {
+        type: "GET",
+        url: "courses.xml",
+        dataType: "xml",
+        complete : function(data, status)
+        {
+            var products = data.responseXML;
+            var html = "";
+
+            $(products).find("product").each(function()
+            {
+                var id = $(this).attr('id');
+                var name = $(this).find("name").text();
+                var price = $(this).find("price").text();
+                html += "<li>#" + id + " - <strong>" + name + "</strong> : " + price + "</li>";
+            });
+            $("#coursesList").html(html);
+        }
+    });
+  </script>
+</head>
+
+<body>
+  <ul id="coursesList"></ul>
+</body>
+
+</html>

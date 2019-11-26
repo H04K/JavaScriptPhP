@@ -1,0 +1,23 @@
+<html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
+
+<body>
+
+        <input type="checkbox" value="Ok" id="total" onclick="changed()">
+
+    <script>
+        function changed() {
+            if ($('#total').prop('checked')) 
+            { 
+                // Traitement si cochée 
+                alert("coché"); 
+            } 
+            else 
+            {
+              alert("décoché")
+            }
+        }
+    </script>
+</body>
+
+</html>
