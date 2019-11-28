@@ -34,7 +34,7 @@ src="http://code.jquery.com/jquery-latest.min.js"></script>
         {
             var auteurs = $("#auteurs");
 
-            $("#status").text("Chargement des livres...");
+            $("#status").text("Chargement");
 
             $.ajax(
             {

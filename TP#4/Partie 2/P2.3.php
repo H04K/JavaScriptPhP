@@ -22,7 +22,7 @@ catch (PDOException $e)
 
 <head>
     <meta charset="utf-8" />
-    <title>2.3 : AJAX et jQuery</title>
+    <title></title>
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"> </script>
     <script>
        
@@ -32,7 +32,7 @@ catch (PDOException $e)
         {
             var livres = $("#livres");
 
-            $("#status").text("Chargement des détails des livres...");
+            $("#status").text("Chargement");
 
             $.ajax(
             {
